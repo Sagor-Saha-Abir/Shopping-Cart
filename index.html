@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping_Cart</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="cart">
+                <div class="col-md-12 col-lg-10 mx-auto">
+                <div class="cart-item">
+                    <div class="row">
+                    
+                        <div class="col-md-7 item">
+                            <img src="images/product-1.png" alt="">
+                            <h5>iPhone 11 128GB Black</h5>
+                        </div>
+                    
+                        <div class="col-md-5 item">
+                            <div class="input-group number-spinner">
+                                <button class="btn btn-default"><i id="minus-Btn" class="fas fa-minus"></i></button>
+                                <input id="inputBtn" type="text" class="form-control text-center" value="1">
+                                <button  class="btn btn-default"><i id="plus" class="fas fa-plus"></i></button>
+                            </div>
+                            <h5 id="total-prize">$1219</h5>
+                            <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
+                    
+                </div>
+                </div>
+
+
+
+
+
+
+                <div class="cart-item">
+                    <div class="row">
+                    
+                        <div class="col-md-7 item">
+                            <img src="images/product-2.png" alt="">
+                            <h5>iPhone 11 Silicone Case - Black</h5>
+                        </div>
+                    
+                        <div class="col-md-5 item">
+                            <div class="input-group number-spinner">
+                                <button class="btn btn-default"><i id="black-minus" class="fas fa-minus"></i></button>
+                                <input id="black-input"  type="text" class="form-control text-center" value="1">
+                                <button class="btn btn-default"><i id="black-plus"  class="fas fa-plus"></i></button>
+                            </div>
+                            <h5 id="black-ammount">$59</h5>
+                            <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
+                    
+                </div>
+                </div>
+
+
+
+
+                <div class="cart-item">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5>Subtotal: </h5>
+                            <h5>Tax:</h5>
+                            <h5>Total:</h5>
+                         </div>
+    
+                         <div class="col-md-4 status">
+                            <h5>$1,278</h5>
+                            <h5>$0</h5>
+                            <h5>$1,278</h5>
+                         </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-12 pt-4 pb-4">
+                    <button type="button" class="btn btn-success check-out">Check Out</button>
+                 </div>
+
+
+
+
+            </div>   
+                </div>
+            </div>
+        
+    </section>
+
+
+
+
+
+         <script>
+             ///////////////iPhone 11 128GB Black////////////////////
+
+             const plusBtn = document.getElementById("plus");
+             plusBtn.addEventListener("click",function(){
+                const input = document.getElementById("inputBtn").value;
+                
+                 const incres =parseInt(input);
+                
+                total =   incres+1;
+                // inputBtn.value=total;
+                 document.getElementById("inputBtn").value = total;
+
+
+                const  totalPrize = document.getElementById("total-prize").innerText;
+                totalCount = total * 1219;
+                //console.log(totalCount);
+                document.getElementById("total-prize").innerText = '$'+totalCount;
+
+
+             })
+
+
+             ////// minus btn///////
+
+             const minusBtn = document.getElementById("minus-Btn");
+                minusBtn.addEventListener("click",function(){
+                    const btnInput = document.getElementById("inputBtn").value;
+                    const decress = parseInt(btnInput);
+                    totalNumber = decress - 1;
+                    document.getElementById("inputBtn").value = totalNumber;
+
+
+                    const  totalPrize = document.getElementById("total-prize").innerText;
+                    totalCount = totalNumber * 1219;
+                    //console.log(totalCount);
+                    document.getElementById("total-prize").innerText = '$'+totalCount;
+                })
+
+
+                /////////////iPhone 11 Silicone Case - Black//////////////
+
+                const plusNum = document.getElementById("black-plus");
+                plusNum.addEventListener("click",function(){
+                    const inputBtn = document.getElementById("black-input").value;
+                    const incress = parseInt(inputBtn);
+                    totalBlack = incress + 1;
+                     document.getElementById("black-input").value = totalBlack;
+
+
+                     const ammount = document.getElementById("black-ammount").innerText;
+                    totalAmmount = totalBlack * 59;
+                    document.getElementById("black-ammount").innerText = '$'+totalAmmount;
+
+                    
+                })
+
+                ////////// minus//////////
+
+                const blakMinus = document.getElementById("black-minus");
+                blakMinus.addEventListener("click",function(){
+                    const inputBtn = document.getElementById("black-input").value;
+                    const incress = parseInt(inputBtn);
+                    totalBlack = incress - 1;
+                    document.getElementById("black-input").value = totalBlack;
+
+
+                    const ammount = document.getElementById("black-ammount").innerText;
+                    totalAmmount = totalBlack * 59;
+                    document.getElementById("black-ammount").innerText = '$'+totalAmmount;
+                })
+
+
+
+         </script>
+
+</body>
+</html>
+
+
+                                  <!-- DO NOT COMPLITE -->
